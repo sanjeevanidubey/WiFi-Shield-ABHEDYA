@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WiFi Shield Abhedya | Advanced WiFi Security</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+    
+    <nav>
+        <div class="logo-container" style="display: flex; align-items: center; gap: 10px;">
+            <img src="{{ url_for('static', filename='assets/logo.png') }}" alt="Logo" class="logo-img" style="width: 40px;">
+            <span class="logo-text">Abhedya</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/" class="active">Home</a></li>
+            <li><a href="/scan">Scan</a></li>
+            <li><a href="/subscribe">Subscription</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/login" class="btn-primary" style="padding: 0.5rem 1rem;">Login</a></li>
+            <li>
+                <button id="theme-toggle" class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container animate-in" style="max-width: var(--container-width); margin: 6rem auto;">
+        <!-- Dynamic Greeting Section -->
+        <div id="user-greeting" style="display: none; text-align: center; margin-bottom: 3rem; background: var(--accent-blue-glow); padding: 1rem; border-radius: 10px; border: 1px solid var(--accent-blue);">
+            <h3 style="color: var(--accent-blue); margin: 0;">Hello, <span id="user-name">Operator</span>. Welcome to Abhedya Intelligence.</h3>
+        </div>
+
+        <header class="hero" style="margin-bottom: var(--section-spacing);">
+            <h1 style="font-size: 4.5rem; line-height: 1.1; margin-bottom: 1.5rem; letter-spacing: -2px;">WiFi Shield <br><span style="color: var(--accent-blue);">ABHEDYA</span></h1>
+            <p style="font-size: 1.25rem; max-width: 600px; margin: 0 auto 3rem; color: var(--text-secondary);">Protecting your digital perimeter with advanced neural mesh scanning and real-time rogue access point detection.</p>
+            <div style="display: flex; gap: 1.5rem; justify-content: center;">
+                <a href="/scan" class="btn-primary" style="padding: 1.2rem 3rem; font-size: 1rem;">Launch Neural Scan</a>
+                <a href="/subscribe" class="btn-primary" style="border-color: var(--glass-border); color: var(--text-primary); padding: 1.2rem 3rem;">View Enterprise Plans</a>
+            </div>
+        </header>
+
+        <section class="features" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3rem; margin-bottom: var(--section-spacing);">
+            <div class="card" style="padding: 3.5rem 2.5rem;">
+                <div style="width: 60px; height: 60px; background: var(--accent-blue-glow); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem;">
+                    <i class="fas fa-shield-virus" style="font-size: 1.5rem; color: var(--accent-blue);"></i>
+                </div>
+                <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Neural Detection</h3>
+                <p style="color: var(--text-secondary); font-size: 1rem;">Automated pattern recognition for Evil Twin hotspots and man-in-the-middle entry points.</p>
+            </div>
+            <div class="card" style="padding: 3.5rem 2.5rem;">
+                <div style="width: 60px; height: 60px; background: var(--accent-blue-glow); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem;">
+                    <i class="fas fa-microchip" style="font-size: 1.5rem; color: var(--accent-blue);"></i>
+                </div>
+                <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Hardware Fingerprinting</h3>
+                <p style="color: var(--text-secondary); font-size: 1rem;">Deep verification of BSSID and encryption handshakes to ensure hardware authenticity.</p>
+            </div>
+            <div class="card" style="padding: 3.5rem 2.5rem;">
+                <div style="width: 60px; height: 60px; background: var(--accent-blue-glow); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem;">
+                    <i class="fas fa-broadcast-tower" style="font-size: 1.5rem; color: var(--accent-blue);"></i>
+                </div>
+                <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Spectrum Analysis</h3>
+                <p style="color: var(--text-secondary); font-size: 1rem;">Continuous monitoring of the 2.4GHz and 5GHz airwaves for unauthorized broadcasts.</p>
+            </div>
+        </section>
+
+        <section class="articles-section stagger-container" style="margin-bottom: var(--section-spacing);">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Security Intelligence</h2>
+                <p style="color: var(--text-secondary);">The latest insights from the WiFi Shield research team.</p>
+            </div>
+            
+            <div class="article-grid">
+                <!-- Article cards as before -->
+                <div class="article-card">
+                    <div class="article-img-container">
+                        <img src="{{ url_for('static', filename='assets/art1.png') }}" alt="Dashboard">
+                        <div class="article-tag">Product Updates</div>
+                    </div>
+                    <div class="article-content" style="padding: 2rem;">
+                        <span class="article-date">Apr 23, 2026</span>
+                        <h3 style="font-size: 1.4rem;">Abhedya 4.0 Is Here: A Whole New Experience</h3>
+                        <p class="article-excerpt">Our biggest update yet, featuring advanced neural mesh scanning and real-time rogue access point detection modules.</p>
+                        <a href="https://www.fing.com/news/fing-desktop-4-0-launch/" target="_blank" class="read-more">Read Full Report <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="article-card">
+                    <div class="article-img-container">
+                        <img src="{{ url_for('static', filename='assets/art2.png') }}" alt="Shield">
+                        <div class="article-tag">Cybersecurity</div>
+                    </div>
+                    <div class="article-content" style="padding: 2rem;">
+                        <span class="article-date">Apr 17, 2026</span>
+                        <h3 style="font-size: 1.4rem;">The Biggest WiFi Security Myths Exposed</h3>
+                        <p class="article-excerpt">Analyzing common misconceptions about public WiFi safety and the hidden dangers of "free" hotspots.</p>
+                        <a href="https://www.fing.com/news/cybersecurity-myths-exposed/" target="_blank" class="read-more">Read Full Report <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="article-card">
+                    <div class="article-img-container">
+                        <img src="{{ url_for('static', filename='assets/art3.png') }}" alt="Router">
+                        <div class="article-tag">Network Defense</div>
+                    </div>
+                    <div class="article-content" style="padding: 2rem;">
+                        <span class="article-date">Apr 03, 2026</span>
+                        <h3 style="font-size: 1.4rem;">Guest Wi-Fi: Why You Need It and How to Secure It</h3>
+                        <p class="article-excerpt">A comprehensive guide on isolating guest traffic to prevent internal network intrusion and data leakage.</p>
+                        <a href="https://www.fing.com/news/cybersecurity-myths-exposed/" target="_blank" class="read-more">Read Full Report <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer style="text-align: center; padding: 6rem 0; border-top: 1px solid var(--glass-border);">
+            <div style="margin-bottom: 3rem; display: flex; flex-direction: column; align-items: center; gap: 1.5rem;">
+                <div style="width: 50px; height: 50px; background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                    <img src="{{ url_for('static', filename='assets/logo.png') }}" alt="Logo" style="width: 25px; filter: drop-shadow(0 0 5px var(--accent-blue));">
+                </div>
+                
+                <div class="credit-badge" style="background: rgba(0, 242, 255, 0.05); border: 1px solid var(--accent-blue); padding: 1.5rem 3rem; border-radius: 50px; backdrop-filter: blur(10px); box-shadow: 0 0 20px rgba(0, 242, 255, 0.1);">
+                    <p style="color: var(--text-secondary); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 0.5rem;">Engineered & Developed by</p>
+                    <h2 style="color: var(--text-primary); font-family: 'Orbitron'; font-size: 1.2rem; letter-spacing: 2px;">
+                        <span style="color: var(--accent-blue);">Sanjeevani</span> • 
+                        <span style="color: var(--accent-blue);">Kashish</span> • 
+                        <span style="color: var(--accent-blue);">Sunaina</span>
+                    </h2>
+                </div>
+            </div>
+            <p style="margin-top: 2rem; font-size: 0.75rem; color: var(--text-secondary); opacity: 0.5;">&copy; 2026 WiFi Shield Abhedya Intelligence Unit. Secure Scan Radius active.</p>
+        </footer>
+    </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 WiFi Shield Abhedya - Cyber Security Framework. All rights reserved.</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script>
+        // Check for 'user' parameter in URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const userName = urlParams.get('user');
+        if (userName) {
+            document.getElementById('user-greeting').style.display = 'block';
+            document.getElementById('user-name').innerText = userName;
+            // Scroll to greeting
+            document.getElementById('user-greeting').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>

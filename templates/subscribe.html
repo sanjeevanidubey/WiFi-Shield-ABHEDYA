@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscription | WiFi Shield Abhedya</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+    
+    <nav>
+        <div class="logo-container" style="display: flex; align-items: center; gap: 10px;">
+            <img src="{{ url_for('static', filename='assets/logo.png') }}" alt="Logo" class="logo-img" style="width: 40px;">
+            <span class="logo-text">Abhedya</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/subscribe" class="active">Premium</a></li>
+            <li><button id="theme-toggle" class="theme-toggle"><i class="fas fa-moon"></i></button></li>
+        </ul>
+    </nav>
+
+    <div class="container animate-in">
+        <header class="hero">
+            <h1>Upgrade your Shield</h1>
+            <p>Get advanced threat intelligence and priority scanning.</p>
+        </header>
+
+        <div class="pricing-grid">
+            <!-- Free Trial -->
+            <div class="card price-card">
+                <h3>Vanguard Trial</h3>
+                <div class="price-value">$0</div>
+                <div class="price-period">30 Days Free</div>
+                <ul style="list-style: none; margin: 2rem 0; color: var(--text-secondary); text-align: left; padding-left: 1rem;">
+                    <li><i class="fas fa-check" style="color: var(--safe-green);"></i> Basic WiFi Scan</li>
+                    <li><i class="fas fa-check" style="color: var(--safe-green);"></i> SSID Fingerprinting</li>
+                    <li><i class="fas fa-times" style="color: var(--fake-red);"></i> Priority Support</li>
+                </ul>
+                <a href="/signup" class="btn-primary" style="width: 100%;">Start Trial</a>
+            </div>
+
+            <!-- 6 Months -->
+            <div class="card price-card" style="border-color: var(--accent-blue);">
+                <div style="background: var(--accent-blue); color: #000; font-size: 0.7rem; font-weight: bold; padding: 0.2rem; border-radius: 3px; display: inline-block; margin-bottom: 1rem;">POPULAR</div>
+                <h3>Tactical Plan</h3>
+                <div class="price-value">$20</div>
+                <div class="price-period">6 Months Access</div>
+                <ul style="list-style: none; margin: 2rem 0; color: var(--text-secondary); text-align: left; padding-left: 1rem;">
+                    <li><i class="fas fa-check" style="color: var(--safe-green);"></i> All Basic Features</li>
+                    <li><i class="fas fa-check" style="color: var(--safe-green);"></i> 24/7 Threat Monitoring</li>
+                    <li><i class="fas fa-check" style="color: var(--safe-green);"></i> Cloud Sync</li>
+                </ul>
+                <a href="/checkout" class="btn-primary" style="width: 100%; background: var(--accent-blue); color: #000;">Select Plan</a>
+            </div>
+
+            <!-- 1 Year -->
+            <div class="card price-card">
+                <h3>Sentinel Elite</h3>
+                <div class="price-value">$100</div>
+                <div class="price-period">12 Months Access</div>
+                <ul style="list-style: none; margin: 2rem 0; color: var(--text-secondary); text-align: left; padding-left: 1rem;">
+                    <li><i class="fas fa-check" style="color: var(--safe-green);"></i> All Tactical Features</li>
+                    <li><i class="fas fa-check" style="color: var(--safe-green);"></i> Priority Scanning Node</li>
+                    <li><i class="fas fa-check" style="color: var(--safe-green);"></i> VIP Support</li>
+                </ul>
+                <a href="/checkout" class="btn-primary" style="width: 100%;">Select Plan</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

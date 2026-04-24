@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | WiFi Shield Abhedya</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+    
+    <nav>
+        <div class="logo-container" style="display: flex; align-items: center; gap: 10px;">
+            <img src="{{ url_for('static', filename='assets/logo.png') }}" alt="Logo" class="logo-img" style="width: 40px;">
+            <span class="logo-text">Abhedya</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/login" class="active">Login</a></li>
+            <li><button id="theme-toggle" class="theme-toggle"><i class="fas fa-moon"></i></button></li>
+        </ul>
+    </nav>
+
+    <div class="container animate-in">
+        <div class="card login-form" style="margin-top: 5rem;">
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <i class="fas fa-user-shield" style="font-size: 3rem; color: var(--accent-blue);"></i>
+                <h2 style="margin-top: 1rem;">Secure Gateway</h2>
+                <p style="color: var(--text-secondary); font-size: 0.8rem;">Enter credentials to access mission control.</p>
+            </div>
+            
+            <form>
+                <div class="form-group">
+                    <label>Operator ID</label>
+                    <input type="text" placeholder="e.g. ABH-7721" required>
+                </div>
+                <div class="form-group">
+                    <label>Encryption Key</label>
+                    <input type="password" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="btn-primary" style="width: 100%;">Establish Link</button>
+            </form>
+            
+            <div style="margin-top: 1.5rem; text-align: center;">
+                <a href="#" style="color: var(--text-secondary); font-size: 0.8rem; text-decoration: none;">Forgot Key?</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
